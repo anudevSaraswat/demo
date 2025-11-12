@@ -27,8 +27,8 @@ builds:
 
 dockers:
   - image_templates:
-      - "ghcr.io/anudevSaraswat/{{ .ProjectName }}:{{ .Tag }}"
-      - "ghcr.io/anudevSaraswat/{{ .ProjectName }}:latest"
+      - "ghcr.io/anudevsaraswat/{{ .ProjectName }}:{{ .Tag }}"
+      - "ghcr.io/anudevsaraswat/{{ .ProjectName }}:latest"
     dockerfile: Dockerfile
     build_flag_templates:
       - "--platform=linux/amd64"
