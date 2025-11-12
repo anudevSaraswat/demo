@@ -25,6 +25,17 @@ builds:
       - windows
       - darwin
 
+dockers:
+  - image_templates:
+      - "ghcr.io/{{ .ProjectName }}/{{ .ProjectName }}:{{ .Tag }}"
+      - "ghcr.io/{{ .ProjectName }}/{{ .ProjectName }}:latest"
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--platform=linux/amd64"
+      - "--label=org.opencontainers.image.source=https://github.com/{{ .GitURL }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+    use: buildx
+
 archives:
   - formats: [tar.gz]
     # this name template makes the OS and Arch compatible with the results of `uname`.
