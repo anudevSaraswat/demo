@@ -15,7 +15,7 @@ before:
     # you may remove this if you don't need go generate
     - go generate ./...
 
-project_name: my-project
+project_name: demo
 
 builds:
   - env:
@@ -27,8 +27,8 @@ builds:
 
 dockers:
   - image_templates:
-      - "ghcr.io/{{ .ProjectName }}/{{ .ProjectName }}:{{ .Tag }}"
-      - "ghcr.io/{{ .ProjectName }}/{{ .ProjectName }}:latest"
+      - "ghcr.io/anudevSaraswat/{{ .ProjectName }}:{{ .Tag }}"
+      - "ghcr.io/anudevSaraswat/{{ .ProjectName }}:latest"
     dockerfile: Dockerfile
     build_flag_templates:
       - "--platform=linux/amd64"

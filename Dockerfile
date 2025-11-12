@@ -5,4 +5,4 @@ USER appuser
 WORKDIR /app
 COPY . /usr/local/bin/my-project
 
-ENTRYPOINT ["my-project"]
+ENTRYPOINT ["demo"]
